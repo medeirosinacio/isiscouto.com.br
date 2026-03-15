@@ -1,4 +1,4 @@
-title: Isis Couto - Psicologia Clínica
+title: Isis Couto Psicóloga
 email: psi@isiscouto.com.br
 source: .
 destination: ./public
@@ -7,27 +7,31 @@ url: https://isiscouto.com.br
 lang: pt-BR
 locale: pt_BR
 author: Isis Couto
-google_analytics: "" # UA-111111111-1
-published: true
+description: >-
+  Psicóloga clínica em Cachoeirinha e região metropolitana de Porto Alegre.
+  Atendimento presencial e online para adolescentes e adultos.
+  Clínica Entre Afetos — acolhimento, ética e cuidado humanizado. CRP 07/34586.
+
+# SEO / Social
 social:
   name: Isis Couto
   links:
     - https://www.instagram.com/psicologaisiscouto/
-post_path: /assets/image/posts/
-icon_path: /assets/icon/
-image_path: /assets/image/
+    - https://www.instagram.com/clinica.entreafetos/
+logo: /assets/image/logo/passaro.png
+
+# OG defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/image/isis-couto.jpg
+
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
-  - jekyll-feed
-  - jekyll-autoprefixer
   - jekyll-seo-tag
   - jekyll-sitemap
-
-sass:
-  sass_dir: assets/css
-  style: compressed
 
 exclude:
   - docker
@@ -37,9 +41,7 @@ exclude:
   - README.md
   - .gitignore
   - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - app
+  - vendor/
   - .idea
+  - .sass-cache
+  - makefile
