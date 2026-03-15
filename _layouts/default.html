@@ -1,23 +1,233 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en-US' }}">
+<html lang="{{ site.lang | default: 'pt-BR' }}">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="index, follow"/>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Isis Couto">
+    <meta name="theme-color" content="#FDF8F6">
+
+    <!-- SEO: jekyll-seo-tag (title, description, OG, Twitter Card, canonical) -->
     {% seo %}
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+
+    <!-- Geo / Local SEO -->
+    <meta name="geo.region" content="BR-RS">
+    <meta name="geo.placename" content="Cachoeirinha, Rio Grande do Sul">
+    <meta name="geo.position" content="-29.9511;-51.0937">
+    <meta name="ICBM" content="-29.9511, -51.0937">
+
     <link rel="icon" href="{{ site.baseurl }}/favicon.ico">
-    <!--[if IE]>
-    <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico"><![endif]-->
+
+    <!-- Fonts (local) -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/fonts.css">
+
+    <!-- Tailwind CSS (local) -->
+    <script src="{{ site.baseurl }}/assets/js/tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blush:   { 50: '#FDF8F6', 100: '#F2E0D9', 200: '#E8C4B8', 300: '#D4A39A', 400: '#C4897E', 500: '#B57068' },
+                        sage:    { 50: '#F4F6F4', 100: '#E3E8E4', 200: '#C5CFC6', 300: '#A8B5A3', 400: '#8A9B84', 500: '#6E8268' },
+                        warm:    { 50: '#FDFCFB', 100: '#F9F5F2', 200: '#F0EAE4', 300: '#E5DCD4', 400: '#D4C8BC' },
+                        gold:    { 400: '#C9A96E', 500: '#B8944F' },
+                        texto:   { 900: '#2D2926', 700: '#4A3F3A', 500: '#6B5E57', 300: '#9A8E87' },
+                    },
+                    fontFamily: {
+                        'serif':  ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        'sans':   ['"Inter"', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    </style>
+
+    <!-- HTTPS redirect (production only) -->
     <script>
         window.location.protocol === 'http:' && !window.location.hostname.match(/^(localhost|127\.0\.0\.1)$/) && (window.location.href = 'https:' + window.location.href.slice(5));
     </script>
+
+    <!-- Schema.org JSON-LD: Person (profissional) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Isis Couto",
+        "jobTitle": "Psicóloga Clínica e Organizacional",
+        "description": "Psicóloga clínica em Cachoeirinha/RS. Atendimento presencial e online para adolescentes e adultos. CRP 07/34586.",
+        "url": "https://isiscouto.com.br",
+        "image": "https://isiscouto.com.br/assets/image/isis-couto.jpg",
+        "telephone": "+5551985640199",
+        "email": "psi@isiscouto.com.br",
+        "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "CRP",
+            "recognizedBy": {
+                "@type": "Organization",
+                "name": "Conselho Regional de Psicologia — 7ª Região"
+            },
+            "identifier": "CRP 07/34586"
+        },
+        "alumniOf": [
+            {
+                "@type": "EducationalOrganization",
+                "name": "Centro Universitário CESUCA"
+            },
+            {
+                "@type": "EducationalOrganization",
+                "name": "Centro Educacional Dom Alberto"
+            }
+        ],
+        "knowsAbout": ["Psicoterapia", "Psicologia Clínica", "Psicologia Organizacional", "Psicologia Social", "Saúde Mental"],
+        "sameAs": [
+            "https://www.instagram.com/psicologaisiscouto/"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cachoeirinha",
+            "addressRegion": "RS",
+            "addressCountry": "BR"
+        }
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD: LocalBusiness (clínica) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "@id": "https://isiscouto.com.br/#clinica",
+        "name": "Clínica Entre Afetos",
+        "description": "Clínica de Psicologia e Nutrição em Cachoeirinha/RS. Atendimento humanizado com equipe de psicólogos e nutricionistas. Psicoterapia individual, atendimento online e presencial.",
+        "url": "https://isiscouto.com.br",
+        "image": "https://isiscouto.com.br/assets/image/entre-afetos.jpg",
+        "telephone": "+5551985640199",
+        "email": "psi@isiscouto.com.br",
+        "founder": {
+            "@type": "Person",
+            "name": "Isis Couto"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cachoeirinha",
+            "addressRegion": "RS",
+            "addressCountry": "BR",
+            "streetAddress": "Centro"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -29.9511,
+            "longitude": -51.0937
+        },
+        "areaServed": [
+            { "@type": "City", "name": "Cachoeirinha" },
+            { "@type": "City", "name": "Porto Alegre" },
+            { "@type": "City", "name": "Gravataí" },
+            { "@type": "City", "name": "Canoas" },
+            { "@type": "City", "name": "Alvorada" },
+            { "@type": "State", "name": "Rio Grande do Sul" }
+        ],
+        "medicalSpecialty": "Psychiatric",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Serviços de Psicologia",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "MedicalTherapy",
+                        "name": "Psicoterapia Individual",
+                        "description": "Acompanhamento psicológico individual para adolescentes e adultos"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Atendimento Online",
+                        "description": "Sessões por videochamada com a mesma qualidade do atendimento presencial"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Palestras e Workshops",
+                        "description": "Palestras e workshops sobre saúde mental e desenvolvimento humano"
+                    }
+                }
+            ]
+        },
+        "sameAs": [
+            "https://www.instagram.com/clinica.entreafetos/",
+            "https://www.instagram.com/psicologaisiscouto/"
+        ],
+        "priceRange": "$$"
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD: ProfessionalService -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Isis Couto — Psicóloga",
+        "description": "Psicoterapia individual presencial e online em Cachoeirinha e região metropolitana de Porto Alegre. CRP 07/34586.",
+        "url": "https://isiscouto.com.br",
+        "telephone": "+5551985640199",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cachoeirinha",
+            "addressRegion": "RS",
+            "addressCountry": "BR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -29.9511,
+            "longitude": -51.0937
+        },
+        "areaServed": "Cachoeirinha, Porto Alegre, Gravataí, Canoas, região metropolitana"
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Início",
+                "item": "https://isiscouto.com.br"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD: WebSite (sitelinks search) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Isis Couto — Psicóloga Clínica",
+        "url": "https://isiscouto.com.br",
+        "description": "Site oficial da psicóloga Isis Couto. Psicoterapia individual, atendimento online e presencial. Clínica Entre Afetos em Cachoeirinha/RS."
+    }
+    </script>
 </head>
-<body>
-<h1 style="display: none">Isis Couto</h1>
-<h2 style="display: none">Psicóloga Clínica</h2>
-{% include navbar.html %}
-{{ content }}
-{% include footer.html %}
+<body class="bg-warm-50 text-texto-900 font-sans">
+    {% include nav.html %}
+    <main role="main">
+        {{ content }}
+    </main>
+    {% include footer-new.html %}
 </body>
 </html>
