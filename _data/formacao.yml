@@ -1,7 +1,7 @@
-- data: 2020 / DEZ
-  titulo:  CRP 07/34586 <br> Bacharela em Psicologia
-  instituicao: Centro Universitário CESUCA
-
-- data: 2021
-  titulo: Pós-Graduanda em Psicologia Social
+- data: "2021"
+  titulo: Pós-Graduação em Psicologia Social
   instituicao: Centro Educacional Dom Alberto
+
+- data: 2021 / FEV
+  titulo: Bacharela em Psicologia
+  instituicao: Centro Universitário CESUCA
