@@ -10,7 +10,7 @@
     <!--[if IE]>
     <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico"><![endif]-->
     <script>
-        window.location.protocol === 'http:' && (window.location.href = 'https:' + window.location.href.slice(5));
+        window.location.protocol === 'http:' && !window.location.hostname.match(/^(localhost|127\.0\.0\.1)$/) && (window.location.href = 'https:' + window.location.href.slice(5));
     </script>
 </head>
 <body>

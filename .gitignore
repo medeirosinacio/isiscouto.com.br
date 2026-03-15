@@ -13,4 +13,5 @@ vendor
 !*/*/*/*/.gitkeep
 !*/*/*/*/*/.gitkeep
 !*/*/*/*/*/*/.gitkeep
-/.well-known/appspecific/com.chrome.devtools.json
+/.well-known/
+/.gem-cache/

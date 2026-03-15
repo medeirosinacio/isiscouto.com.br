@@ -1,6 +1,6 @@
 #!/usr/bin/make
 
-CONTAINER_NAME=blog.douglasmedeiros.dev
+CONTAINER_NAME=isiscouto.com.br
 .DEFAULT_GOAL := help
 
 setup: ## Setup the project
