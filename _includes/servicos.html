@@ -1,0 +1,38 @@
+<!-- Serviços Section -->
+<section id="servicos" class="py-24 md:py-32 bg-warm-50">
+    <div class="max-w-5xl mx-auto px-6">
+        <!-- Section header -->
+        <div class="text-center mb-16">
+            <span class="text-xs font-sans font-medium tracking-[0.3em] uppercase text-blush-400 block mb-4">Áreas de Atuação</span>
+            <h2 class="font-serif text-4xl md:text-5xl font-light text-texto-900">
+                Como posso <span class="italic text-blush-400">ajudar</span>
+            </h2>
+            <div class="w-12 h-px bg-blush-200 mx-auto mt-6"></div>
+        </div>
+
+        <!-- Services grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for servico in site.data.servicos %}
+            <div class="bg-white rounded-2xl p-8 hover:shadow-lg hover:shadow-blush-100/50 transition-all duration-300 group border border-warm-200/50 hover:border-blush-100">
+                <div class="text-3xl mb-4">{{ servico.icone }}</div>
+                <h3 class="font-serif text-lg font-medium text-texto-900 mb-3 group-hover:text-blush-400 transition-colors duration-300">
+                    {{ servico.titulo }}
+                </h3>
+                <p class="text-texto-500 text-sm leading-relaxed">
+                    {{ servico.descricao }}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-14">
+            <a href="https://wa.me/55{{ site.data.geral.telefone_so_numeros }}?text={{ site.data.geral.texto_whats | url_encode }}"
+               target="_blank"
+               class="inline-flex items-center gap-2 bg-blush-200 hover:bg-blush-300 text-texto-700 font-medium px-8 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-blush-200/50">
+                Agende uma conversa
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
